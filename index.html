@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>安孫子菜央</title>
+  <meta charset="UTF-8">
+  <title>現実での用事</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    自転車に乗りながらあくびするとき、カメムシが入ってこないように口を自販機のゴミ箱みたいにする──10月半ば、割と寒い日<br>さっき何か思いついたのに忘れた<br>日本にいる意味、ふらっと回転寿司に入り寿司や汁や麺を頬張りお茶でまったり。──10月後半、謎に晴れて暑い<br>
-    <footer>
-    <small>(C)2025 NaoAbiko</small>
-    </footer>
+
+  <header>
+    <h1>現実での用事</h1>
+    <p>日々の記録</p>
+  </header>
+
+  <main>
+    <h2>記事一覧</h2>
+    <ul id="post-list"></ul>
+  </main>
+
+  <script>
+    async function loadPosts() {
+      const res = await fetch('posts/');
+      const text = await res.text();
+      const links = [...text.matchAll(/href="([^"]+\.md)"/g)];
+
+      const list = document.getElementById('post-list');
+      links.forEach(link => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="posts/${link[1]}">${link[1].replace('.md','')}</a>`;
+        list.appendChild(li);
+      });
+    }
+    loadPosts();
+  </script>
+
 </body>
 </html>
-
-
-
-
