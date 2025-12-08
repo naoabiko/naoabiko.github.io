@@ -12,26 +12,12 @@
     <p>日々の記録</p>
   </header>
 
-  <main>
-    <h2>記事一覧</h2>
-    <ul id="post-list"></ul>
-  </main>
+<main>
+  <h2>記事一覧</h2>
 
-  <script>
-    async function loadPosts() {
-      const res = await fetch('posts/');
-      const text = await res.text();
-      const links = [...text.matchAll(/href="([^"]+\.md)"/g)];
-
-      const list = document.getElementById('post-list');
-      links.forEach(link => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="posts/${link[1]}">${link[1].replace('.md','')}</a>`;
-        list.appendChild(li);
-      });
-    }
-    loadPosts();
-  </script>
-
+  <ul>
+    <li><a href="posts/2025-01-first-post.html">はじめての記事</a></li>
+  </ul>
+</main>
 </body>
 </html>
