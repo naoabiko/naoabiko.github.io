@@ -11,7 +11,7 @@
 
 .site-title {
     font-family: 'Noto Sans JP', sans-serif; /* フォント指定 */
-    font-size: 60px;                          /* サイズ指定 */
+    font-size: 50px;                          /* サイズ指定 */
     margin: 0;
     color: #333;
 }
@@ -23,11 +23,11 @@ body {
   padding: 0 8px;
   line-height: 1.7;
   font-size: 25px;
-  padding-top: 70px; 
+  padding-top: 120px; 
   
 }
 h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 h2 {
